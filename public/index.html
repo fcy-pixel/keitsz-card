@@ -63,31 +63,18 @@
   /* 頂部彩色天空 banner */
   .sky{
     position:relative;
-    height:148px;
-    background:linear-gradient(170deg,#a7d6ff 0%,#cfe6ff 45%,#ffe1dc 100%);
+    height:150px;
+    background:#cfe0ee url("banner.jpg") center 38% / cover no-repeat;
     overflow:hidden;
   }
-  .sky .sun{
-    position:absolute; top:-26px; right:-22px;
-    width:108px; height:108px; border-radius:50%;
-    background:radial-gradient(circle at 35% 35%, #fff1a8, #ffd24d 70%, #ffbf3a);
-    box-shadow:0 0 0 10px rgba(255,210,77,.25), 0 0 0 22px rgba(255,210,77,.12);
+  .sky::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      rgba(20,30,60,.10) 0%,
+      rgba(20,30,60,0) 32%,
+      rgba(255,248,239,.10) 74%,
+      rgba(255,248,239,.55) 100%);
   }
-  .cloud{position:absolute;background:#fff;border-radius:50px;opacity:.95}
-  .cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
-  .c1{width:64px;height:20px;left:24px;top:34px}
-  .c1::before{width:28px;height:28px;left:8px;top:-12px}
-  .c1::after{width:22px;height:22px;left:32px;top:-9px}
-  .c2{width:46px;height:15px;left:140px;top:18px;opacity:.85}
-  .c2::before{width:20px;height:20px;left:6px;top:-9px}
-  .c2::after{width:16px;height:16px;left:24px;top:-6px}
-  /* 小星星裝飾（SVG，非 emoji）*/
-  .star{position:absolute;color:#fff;animation:twinkle 2.8s ease-in-out infinite}
-  .star svg{width:100%;height:100%;display:block;fill:currentColor}
-  .s1{width:16px;height:16px;left:26px;top:96px;opacity:.95;animation-delay:.2s}
-  .s2{width:11px;height:11px;right:74px;top:86px;opacity:.85;animation-delay:.9s}
-  .s3{width:10px;height:10px;right:30px;top:58px;color:#ffe08a;opacity:.95;animation-delay:1.4s}
-  @keyframes twinkle{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(.6);opacity:.4}}
 
   /* 個人頭像 + 校徽小章 */
   .avatar-wrap{
@@ -200,14 +187,7 @@
 <body>
   <main>
     <section class="card" id="card">
-      <div class="sky">
-        <div class="sun"></div>
-        <div class="cloud c1"></div>
-        <div class="cloud c2"></div>
-        <span class="star s1"><svg viewBox="0 0 24 24"><path d="M12 2l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.77l-5.88 3.09 1.12-6.55L2.48 9.92l6.58-.96z"/></svg></span>
-        <span class="star s2"><svg viewBox="0 0 24 24"><path d="M12 2l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.77l-5.88 3.09 1.12-6.55L2.48 9.92l6.58-.96z"/></svg></span>
-        <span class="star s3"><svg viewBox="0 0 24 24"><path d="M12 2l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.77l-5.88 3.09 1.12-6.55L2.48 9.92l6.58-.96z"/></svg></span>
-      </div>
+      <div class="sky"></div>
       <div class="avatar-wrap">
         <img class="avatar" src="portrait.png" alt="馮志遠主任" />
         <span class="logo-badge"><img src="logo.png" alt="中華基督教會基慈小學校徽" /></span>
