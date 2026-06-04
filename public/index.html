@@ -7,259 +7,250 @@
 <meta name="description" content="馮志遠主任 電子名片 — 中華基督教會基慈小學" />
 <meta property="og:title" content="馮志遠主任 · 中華基督教會基慈小學" />
 <meta property="og:description" content="電子名片 Virtual Card" />
+<meta property="og:image" content="logo.png" />
 <meta property="og:type" content="profile" />
+<link rel="icon" href="logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --ink:#1f2a37;
-    --muted:#5b6b7b;
-    --line:#e6ebf1;
-    --brand:#0e5a8a;
-    --brand-2:#1f8a70;
-    --gold:#c9a24b;
-    --bg-1:#eef4f8;
-    --bg-2:#e7f1ec;
-    --card:#ffffff;
+    --red:#d23a30;
+    --red-soft:#ef6b62;
+    --blue:#2e3192;
+    --blue-soft:#5b62d8;
+    --sky:#bfe3ff;
+    --cream:#fff8ef;
+    --ink:#3a3550;
+    --muted:#8a86a0;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{
-    font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-family:"Baloo 2","Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(1200px 600px at 10% -10%, var(--bg-1), transparent 60%),
-      radial-gradient(1000px 600px at 110% 10%, var(--bg-2), transparent 55%),
-      linear-gradient(160deg,#f6f9fb,#eef3f1);
+      radial-gradient(900px 500px at 12% -8%, #ffe6e2, transparent 60%),
+      radial-gradient(900px 520px at 110% 8%, #dfe6ff, transparent 60%),
+      linear-gradient(165deg,#fff5f0 0%,#eef4ff 60%,#f3eaff 100%);
     min-height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:28px 16px;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:18px;
+    padding:26px 16px 34px;
   }
+
+  /* ---------- 名片 ---------- */
   .card{
-    width:100%;
-    max-width:400px;
-    background:var(--card);
-    border-radius:24px;
-    box-shadow:0 30px 60px -20px rgba(14,90,138,.30), 0 10px 24px -12px rgba(0,0,0,.12);
-    overflow:hidden;
     position:relative;
-    border:1px solid rgba(255,255,255,.7);
+    width:100%; max-width:392px;
+    background:var(--cream);
+    border-radius:30px;
+    border:3px solid #fff;
+    box-shadow:
+      0 26px 50px -18px rgba(46,49,146,.32),
+      0 8px 20px -10px rgba(210,58,48,.20),
+      inset 0 0 0 4px rgba(255,255,255,.6);
+    overflow:hidden;
+    padding-bottom:26px;
   }
-  .banner{
+
+  /* 頂部彩色天空 banner */
+  .sky{
     position:relative;
-    height:128px;
-    background:linear-gradient(120deg,var(--brand) 0%, #146b9c 45%, var(--brand-2) 100%);
+    height:148px;
+    background:linear-gradient(170deg,#a7d6ff 0%,#cfe6ff 45%,#ffe1dc 100%);
     overflow:hidden;
   }
-  .banner::after{
-    content:"";
-    position:absolute; inset:0;
-    background:
-      radial-gradient(220px 120px at 80% 0%, rgba(255,255,255,.22), transparent 70%),
-      radial-gradient(180px 160px at 0% 100%, rgba(201,162,75,.35), transparent 70%);
+  .sky .sun{
+    position:absolute; top:-26px; right:-22px;
+    width:108px; height:108px; border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #fff1a8, #ffd24d 70%, #ffbf3a);
+    box-shadow:0 0 0 10px rgba(255,210,77,.25), 0 0 0 22px rgba(255,210,77,.12);
   }
+  .cloud{position:absolute;background:#fff;border-radius:50px;opacity:.95}
+  .cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+  .c1{width:64px;height:20px;left:24px;top:34px}
+  .c1::before{width:28px;height:28px;left:8px;top:-12px}
+  .c1::after{width:22px;height:22px;left:32px;top:-9px}
+  .c2{width:46px;height:15px;left:140px;top:18px;opacity:.85}
+  .c2::before{width:20px;height:20px;left:6px;top:-9px}
+  .c2::after{width:16px;height:16px;left:24px;top:-6px}
+  .doodle{position:absolute;font-size:22px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.08));animation:bob 3.6s ease-in-out infinite}
+  .d1{left:18px;top:96px;animation-delay:.1s}
+  .d2{right:60px;top:92px;font-size:20px;animation-delay:.7s}
+  .d3{right:20px;top:60px;font-size:18px;animation-delay:1.2s}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(4deg)}}
+
+  /* 校徽 */
   .crest{
-    position:absolute;
-    left:50%; top:80px; transform:translateX(-50%);
-    width:96px; height:96px; border-radius:50%;
+    position:absolute; left:50%; top:89px; transform:translateX(-50%);
+    width:118px; height:118px; border-radius:50%;
     background:#fff;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 8px 22px rgba(14,90,138,.28);
-    border:4px solid #fff;
-    z-index:2;
+    box-shadow:0 10px 24px rgba(46,49,146,.28);
+    border:5px solid #fff;
+    z-index:3;
+    animation:pop .6s cubic-bezier(.34,1.56,.64,1) both;
   }
-  .crest .mono{
-    font-family:"Noto Serif TC",serif;
-    font-weight:900;
-    font-size:30px;
-    background:linear-gradient(135deg,var(--brand),var(--brand-2));
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent;
-    line-height:1;
-  }
-  .body{padding:62px 26px 26px;text-align:center}
+  .crest img{width:84px;height:84px;object-fit:contain}
+  @keyframes pop{0%{transform:translateX(-50%) scale(.4);opacity:0}100%{transform:translateX(-50%) scale(1);opacity:1}}
+
+  .body{padding:68px 24px 0;text-align:center}
   .name{
-    font-family:"Noto Serif TC",serif;
-    font-size:30px; font-weight:900; letter-spacing:2px;
-    color:var(--ink);
+    font-family:"Baloo 2","Noto Sans TC",sans-serif;
+    font-size:36px; font-weight:800; letter-spacing:2px;
+    color:var(--blue);
+    line-height:1.1;
   }
-  .title{
-    margin-top:6px;
-    font-size:15px; font-weight:500; color:var(--brand);
-    letter-spacing:1px;
+  .title-pill{
+    display:inline-block; margin-top:10px;
+    padding:5px 18px; border-radius:999px;
+    background:linear-gradient(135deg,var(--red),var(--red-soft));
+    color:#fff; font-weight:700; font-size:15px; letter-spacing:2px;
+    box-shadow:0 6px 14px -6px rgba(210,58,48,.7);
   }
-  .school{
-    margin-top:14px;
-    font-family:"Noto Serif TC",serif;
-    font-size:17px; font-weight:700; color:var(--ink);
-    letter-spacing:1px;
+
+  /* 學歷 badges */
+  .edu{
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    margin-top:18px;
   }
-  .school-en{
-    margin-top:2px; font-size:12px; color:var(--muted); letter-spacing:.5px;
+  .edu .badge{
+    display:flex; align-items:center; gap:7px;
+    padding:9px 15px; border-radius:16px;
+    background:#fff;
+    border:2px solid #ede6ff;
+    box-shadow:0 6px 14px -10px rgba(46,49,146,.5);
   }
+  .edu .badge .cap{font-size:19px;line-height:1}
+  .edu .badge .lab{text-align:left;line-height:1.15}
+  .edu .badge .deg{font-size:15px;font-weight:800;color:var(--blue)}
+  .edu .badge .deg small{font-size:12px;color:var(--muted);font-weight:600}
+  .edu .badge .zh{font-size:11px;color:var(--muted);font-weight:600}
+
   .rule{
-    width:54px; height:3px; margin:18px auto;
-    background:linear-gradient(90deg,var(--gold),#e7c97e);
-    border-radius:3px;
+    width:70px; height:5px; margin:20px auto 16px;
+    background:linear-gradient(90deg,var(--red),#ffcf3a,var(--blue));
+    border-radius:6px;
   }
-  .contact{
-    display:flex; flex-direction:column; gap:10px;
-    margin-top:4px;
+
+  .school{
+    font-family:"Noto Sans TC",sans-serif;
+    font-size:18px; font-weight:900; color:var(--ink); letter-spacing:1px;
   }
-  .row{
-    display:flex; align-items:center; gap:12px;
-    padding:12px 14px;
-    border:1px solid var(--line);
-    border-radius:14px;
-    text-decoration:none;
-    color:var(--ink);
-    background:#fbfdff;
-    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  .school-en{margin-top:3px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+
+  .mail{
+    display:inline-flex; align-items:center; gap:9px;
+    margin-top:16px; padding:11px 18px;
+    border-radius:16px; text-decoration:none;
+    background:linear-gradient(135deg,#eef3ff,#fdeef0);
+    border:2px solid #fff;
+    color:var(--ink); font-weight:700; font-size:14px;
+    box-shadow:0 6px 14px -10px rgba(46,49,146,.5);
   }
-  .row:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 18px -10px rgba(14,90,138,.35);
-    border-color:#cfe1ee;
-  }
-  .ico{
-    flex:0 0 38px; width:38px; height:38px; border-radius:10px;
-    display:flex; align-items:center; justify-content:center;
-    background:linear-gradient(135deg,rgba(14,90,138,.12),rgba(31,138,112,.12));
-    color:var(--brand);
-  }
-  .ico svg{width:20px;height:20px}
-  .row .txt{text-align:left;overflow:hidden}
-  .row .lbl{font-size:11px;color:var(--muted);letter-spacing:.5px}
-  .row .val{font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .actions{margin-top:22px;display:flex;gap:12px}
-  .btn{
-    flex:1; padding:14px 10px; border-radius:14px;
-    font-size:14px; font-weight:700; letter-spacing:.5px;
-    white-space:nowrap;
-    cursor:pointer; border:none; text-decoration:none;
-    display:flex;align-items:center;justify-content:center;gap:7px;
-    transition:transform .15s ease, box-shadow .15s ease, opacity .15s;
-  }
-  .btn svg{width:18px;height:18px}
-  .btn-primary{
-    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  .mail .e{font-size:18px}
+
+  /* 截圖按鈕（在卡片外） */
+  .cap-btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 30px; border:none; cursor:pointer;
+    border-radius:999px;
+    font-family:"Baloo 2","Noto Sans TC",sans-serif;
+    font-size:17px; font-weight:800; letter-spacing:1px;
     color:#fff;
-    box-shadow:0 10px 22px -10px rgba(14,90,138,.6);
+    background:linear-gradient(135deg,var(--blue),var(--blue-soft));
+    box-shadow:0 12px 24px -10px rgba(46,49,146,.75);
+    transition:transform .15s ease, box-shadow .15s ease, opacity .2s;
   }
-  .btn-primary:hover{transform:translateY(-1px)}
-  .btn-ghost{
-    background:#fff;color:var(--brand);border:1px solid #cfe1ee;
-  }
-  .btn-ghost:hover{transform:translateY(-1px)}
-  .qr-wrap{
-    margin-top:22px; display:none; flex-direction:column; align-items:center; gap:10px;
-    padding-top:18px; border-top:1px dashed var(--line);
-  }
-  .qr-wrap.show{display:flex}
-  #qrcode{padding:10px;background:#fff;border:1px solid var(--line);border-radius:14px;line-height:0}
-  #qrcode img,#qrcode canvas{display:block;border-radius:6px;width:196px;height:196px;image-rendering:pixelated}
-  .qr-hint{font-size:12px;color:var(--muted)}
-  .foot{
-    margin-top:22px; font-size:11px; color:#9aa8b6; letter-spacing:.5px;
-  }
+  .cap-btn:hover{transform:translateY(-2px) scale(1.02)}
+  .cap-btn:active{transform:translateY(0) scale(.98)}
+  .cap-btn .ic{font-size:20px}
+  .cap-btn.busy{opacity:.7;pointer-events:none}
+  .hint{font-size:12px;color:var(--muted);margin-top:-6px}
+
   @media (max-width:380px){
-    .body{padding:58px 20px 22px}
-    .name{font-size:26px}
+    .name{font-size:32px}
+    .body{padding:66px 18px 0}
   }
 </style>
 </head>
 <body>
-  <main class="card" role="main">
-    <div class="banner"></div>
-    <div class="crest"><span class="mono">基慈</span></div>
-    <div class="body">
-      <h1 class="name">馮志遠</h1>
-      <div class="title">主任 · Master</div>
-
-      <div class="school">中華基督教會基慈小學</div>
-      <div class="school-en">CCC Kei Tsz Primary School</div>
-
-      <div class="rule"></div>
-
-      <nav class="contact">
-        <a class="row" href="mailto:fcy@keitsz.edu.hk">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </span>
-          <span class="txt">
-            <span class="lbl">電郵 Email</span><br/>
-            <span class="val">fcy@keitsz.edu.hk</span>
-          </span>
-        </a>
-        <a class="row" href="https://www.keitsz.edu.hk" target="_blank" rel="noopener">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </span>
-          <span class="txt">
-            <span class="lbl">學校網頁 Website</span><br/>
-            <span class="val">www.keitsz.edu.hk</span>
-          </span>
-        </a>
-      </nav>
-
-      <div class="actions">
-        <a class="btn btn-primary" id="saveBtn" href="#" download="馮志遠.vcf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          儲存聯絡人
-        </a>
-        <button class="btn btn-ghost" id="qrBtn" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 21h-3M21 14v3M17 21v-1"/></svg>
-          QR Code
-        </button>
+  <main>
+    <section class="card" id="card">
+      <div class="sky">
+        <div class="sun"></div>
+        <div class="cloud c1"></div>
+        <div class="cloud c2"></div>
+        <span class="doodle d1">📚</span>
+        <span class="doodle d2">✏️</span>
+        <span class="doodle d3">⭐</span>
       </div>
+      <div class="crest"><img src="logo.png" alt="中華基督教會基慈小學校徽" /></div>
 
-      <div class="qr-wrap" id="qrWrap">
-        <div id="qrcode"></div>
-        <div class="qr-hint">用相機掃描即可加入聯絡人</div>
+      <div class="body">
+        <h1 class="name">馮志遠</h1>
+        <div class="title-pill">主任 · Master</div>
+
+        <div class="edu">
+          <div class="badge">
+            <span class="cap">🎓</span>
+            <span class="lab">
+              <span class="deg">M.Ed <small>教育碩士</small></span>
+            </span>
+          </div>
+          <div class="badge">
+            <span class="cap">🎓</span>
+            <span class="lab">
+              <span class="deg">B.Ed <small>教育學士</small></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="school">中華基督教會基慈小學</div>
+        <div class="school-en">CCC Kei Tsz Primary School</div>
+
+        <a class="mail" href="mailto:fcy@keitsz.edu.hk">
+          <span class="e">✉️</span> fcy@keitsz.edu.hk
+        </a>
       </div>
+    </section>
 
-      <div class="foot">電子名片 · Virtual Card</div>
-    </div>
+    <button class="cap-btn" id="capBtn" type="button">
+      <span class="ic">📸</span> 截圖儲存名片
+    </button>
+    <div class="hint">一鍵儲存為圖片，方便分享</div>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script>
-    // ---- vCard (儲存聯絡人) ----
-    const vcard = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      "N:馮;志遠;;;",
-      "FN:馮志遠",
-      "ORG:中華基督教會基慈小學",
-      "TITLE:主任",
-      "EMAIL;TYPE=WORK:fcy@keitsz.edu.hk",
-      "URL:https://www.keitsz.edu.hk",
-      "END:VCARD"
-    ].join("\r\n");
-    const blob = new Blob([vcard], {type:"text/vcard;charset=utf-8"});
-    document.getElementById("saveBtn").href = URL.createObjectURL(blob);
-
-    // 將字串轉為 UTF-8 位元組字串，令 QR 正確編碼中文
-    const toUtf8Bytes = (s) => unescape(encodeURIComponent(s));
-
-    // ---- QR code（掃描即加聯絡人）----
-    let qrDrawn = false;
-    const qrBtn = document.getElementById("qrBtn");
-    const qrWrap = document.getElementById("qrWrap");
-    qrBtn.addEventListener("click", () => {
-      qrWrap.classList.toggle("show");
-      if (!qrDrawn && window.qrcode) {
-        const qr = qrcode(0, "M");
-        qr.addData(toUtf8Bytes(vcard), "Byte");
-        qr.make();
-        document.getElementById("qrcode").innerHTML = qr.createImgTag(4, 0);
-        qrDrawn = true;
-      }
-      if (qrWrap.classList.contains("show")) {
-        qrWrap.scrollIntoView({behavior:"smooth", block:"nearest"});
+    const capBtn = document.getElementById("capBtn");
+    const card = document.getElementById("card");
+    capBtn.addEventListener("click", async () => {
+      if (!window.html2canvas) return;
+      capBtn.classList.add("busy");
+      const original = capBtn.innerHTML;
+      capBtn.innerHTML = '<span class="ic">⏳</span> 生成中…';
+      try {
+        const canvas = await html2canvas(card, {
+          scale: Math.max(2, window.devicePixelRatio || 1),
+          backgroundColor: null,
+          useCORS: true,
+          logging: false
+        });
+        const link = document.createElement("a");
+        link.download = "馮志遠_名片.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      } catch (e) {
+        console.error(e);
+        alert("生成圖片失敗，請再試一次。");
+      } finally {
+        capBtn.classList.remove("busy");
+        capBtn.innerHTML = original;
       }
     });
   </script>
