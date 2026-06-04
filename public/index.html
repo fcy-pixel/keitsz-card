@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>馮志遠主任 · 中華基督教會基慈小學</title>
+<meta name="description" content="馮志遠主任 電子名片 — 中華基督教會基慈小學" />
+<meta property="og:title" content="馮志遠主任 · 中華基督教會基慈小學" />
+<meta property="og:description" content="電子名片 Virtual Card" />
+<meta property="og:type" content="profile" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1f2a37;
+    --muted:#5b6b7b;
+    --line:#e6ebf1;
+    --brand:#0e5a8a;
+    --brand-2:#1f8a70;
+    --gold:#c9a24b;
+    --bg-1:#eef4f8;
+    --bg-2:#e7f1ec;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, var(--bg-1), transparent 60%),
+      radial-gradient(1000px 600px at 110% 10%, var(--bg-2), transparent 55%),
+      linear-gradient(160deg,#f6f9fb,#eef3f1);
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px 16px;
+  }
+  .card{
+    width:100%;
+    max-width:400px;
+    background:var(--card);
+    border-radius:24px;
+    box-shadow:0 30px 60px -20px rgba(14,90,138,.30), 0 10px 24px -12px rgba(0,0,0,.12);
+    overflow:hidden;
+    position:relative;
+    border:1px solid rgba(255,255,255,.7);
+  }
+  .banner{
+    position:relative;
+    height:128px;
+    background:linear-gradient(120deg,var(--brand) 0%, #146b9c 45%, var(--brand-2) 100%);
+    overflow:hidden;
+  }
+  .banner::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(220px 120px at 80% 0%, rgba(255,255,255,.22), transparent 70%),
+      radial-gradient(180px 160px at 0% 100%, rgba(201,162,75,.35), transparent 70%);
+  }
+  .crest{
+    position:absolute;
+    left:50%; top:80px; transform:translateX(-50%);
+    width:96px; height:96px; border-radius:50%;
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 22px rgba(14,90,138,.28);
+    border:4px solid #fff;
+    z-index:2;
+  }
+  .crest .mono{
+    font-family:"Noto Serif TC",serif;
+    font-weight:900;
+    font-size:30px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    line-height:1;
+  }
+  .body{padding:62px 26px 26px;text-align:center}
+  .name{
+    font-family:"Noto Serif TC",serif;
+    font-size:30px; font-weight:900; letter-spacing:2px;
+    color:var(--ink);
+  }
+  .title{
+    margin-top:6px;
+    font-size:15px; font-weight:500; color:var(--brand);
+    letter-spacing:1px;
+  }
+  .school{
+    margin-top:14px;
+    font-family:"Noto Serif TC",serif;
+    font-size:17px; font-weight:700; color:var(--ink);
+    letter-spacing:1px;
+  }
+  .school-en{
+    margin-top:2px; font-size:12px; color:var(--muted); letter-spacing:.5px;
+  }
+  .rule{
+    width:54px; height:3px; margin:18px auto;
+    background:linear-gradient(90deg,var(--gold),#e7c97e);
+    border-radius:3px;
+  }
+  .contact{
+    display:flex; flex-direction:column; gap:10px;
+    margin-top:4px;
+  }
+  .row{
+    display:flex; align-items:center; gap:12px;
+    padding:12px 14px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    text-decoration:none;
+    color:var(--ink);
+    background:#fbfdff;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .row:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 18px -10px rgba(14,90,138,.35);
+    border-color:#cfe1ee;
+  }
+  .ico{
+    flex:0 0 38px; width:38px; height:38px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,rgba(14,90,138,.12),rgba(31,138,112,.12));
+    color:var(--brand);
+  }
+  .ico svg{width:20px;height:20px}
+  .row .txt{text-align:left;overflow:hidden}
+  .row .lbl{font-size:11px;color:var(--muted);letter-spacing:.5px}
+  .row .val{font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .actions{margin-top:22px;display:flex;gap:12px}
+  .btn{
+    flex:1; padding:14px 10px; border-radius:14px;
+    font-size:14px; font-weight:700; letter-spacing:.5px;
+    white-space:nowrap;
+    cursor:pointer; border:none; text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    transition:transform .15s ease, box-shadow .15s ease, opacity .15s;
+  }
+  .btn svg{width:18px;height:18px}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    color:#fff;
+    box-shadow:0 10px 22px -10px rgba(14,90,138,.6);
+  }
+  .btn-primary:hover{transform:translateY(-1px)}
+  .btn-ghost{
+    background:#fff;color:var(--brand);border:1px solid #cfe1ee;
+  }
+  .btn-ghost:hover{transform:translateY(-1px)}
+  .qr-wrap{
+    margin-top:22px; display:none; flex-direction:column; align-items:center; gap:10px;
+    padding-top:18px; border-top:1px dashed var(--line);
+  }
+  .qr-wrap.show{display:flex}
+  #qrcode{padding:10px;background:#fff;border:1px solid var(--line);border-radius:14px;line-height:0}
+  #qrcode img,#qrcode canvas{display:block;border-radius:6px;width:196px;height:196px;image-rendering:pixelated}
+  .qr-hint{font-size:12px;color:var(--muted)}
+  .foot{
+    margin-top:22px; font-size:11px; color:#9aa8b6; letter-spacing:.5px;
+  }
+  @media (max-width:380px){
+    .body{padding:58px 20px 22px}
+    .name{font-size:26px}
+  }
+</style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="banner"></div>
+    <div class="crest"><span class="mono">基慈</span></div>
+    <div class="body">
+      <h1 class="name">馮志遠</h1>
+      <div class="title">主任 · Master</div>
+
+      <div class="school">中華基督教會基慈小學</div>
+      <div class="school-en">CCC Kei Tsz Primary School</div>
+
+      <div class="rule"></div>
+
+      <nav class="contact">
+        <a class="row" href="mailto:fcy@keitsz.edu.hk">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <span class="txt">
+            <span class="lbl">電郵 Email</span><br/>
+            <span class="val">fcy@keitsz.edu.hk</span>
+          </span>
+        </a>
+        <a class="row" href="https://www.keitsz.edu.hk" target="_blank" rel="noopener">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </span>
+          <span class="txt">
+            <span class="lbl">學校網頁 Website</span><br/>
+            <span class="val">www.keitsz.edu.hk</span>
+          </span>
+        </a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn btn-primary" id="saveBtn" href="#" download="馮志遠.vcf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          儲存聯絡人
+        </a>
+        <button class="btn btn-ghost" id="qrBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 21h-3M21 14v3M17 21v-1"/></svg>
+          QR Code
+        </button>
+      </div>
+
+      <div class="qr-wrap" id="qrWrap">
+        <div id="qrcode"></div>
+        <div class="qr-hint">用相機掃描即可加入聯絡人</div>
+      </div>
+
+      <div class="foot">電子名片 · Virtual Card</div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script>
+    // ---- vCard (儲存聯絡人) ----
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:馮;志遠;;;",
+      "FN:馮志遠",
+      "ORG:中華基督教會基慈小學",
+      "TITLE:主任",
+      "EMAIL;TYPE=WORK:fcy@keitsz.edu.hk",
+      "URL:https://www.keitsz.edu.hk",
+      "END:VCARD"
+    ].join("\r\n");
+    const blob = new Blob([vcard], {type:"text/vcard;charset=utf-8"});
+    document.getElementById("saveBtn").href = URL.createObjectURL(blob);
+
+    // 將字串轉為 UTF-8 位元組字串，令 QR 正確編碼中文
+    const toUtf8Bytes = (s) => unescape(encodeURIComponent(s));
+
+    // ---- QR code（掃描即加聯絡人）----
+    let qrDrawn = false;
+    const qrBtn = document.getElementById("qrBtn");
+    const qrWrap = document.getElementById("qrWrap");
+    qrBtn.addEventListener("click", () => {
+      qrWrap.classList.toggle("show");
+      if (!qrDrawn && window.qrcode) {
+        const qr = qrcode(0, "M");
+        qr.addData(toUtf8Bytes(vcard), "Byte");
+        qr.make();
+        document.getElementById("qrcode").innerHTML = qr.createImgTag(4, 0);
+        qrDrawn = true;
+      }
+      if (qrWrap.classList.contains("show")) {
+        qrWrap.scrollIntoView({behavior:"smooth", block:"nearest"});
+      }
+    });
+  </script>
+</body>
+</html>
