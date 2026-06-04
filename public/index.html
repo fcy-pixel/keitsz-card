@@ -40,6 +40,11 @@
     padding:26px 16px 34px;
   }
 
+  main{
+    display:flex; flex-direction:column;
+    align-items:center; gap:16px; width:100%;
+  }
+
   /* ---------- 名片 ---------- */
   .card{
     position:relative;
@@ -76,27 +81,38 @@
   .c2{width:46px;height:15px;left:140px;top:18px;opacity:.85}
   .c2::before{width:20px;height:20px;left:6px;top:-9px}
   .c2::after{width:16px;height:16px;left:24px;top:-6px}
-  .doodle{position:absolute;font-size:22px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.08));animation:bob 3.6s ease-in-out infinite}
-  .d1{left:18px;top:96px;animation-delay:.1s}
-  .d2{right:60px;top:92px;font-size:20px;animation-delay:.7s}
-  .d3{right:20px;top:60px;font-size:18px;animation-delay:1.2s}
-  @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(4deg)}}
+  /* 小星星裝飾（SVG，非 emoji）*/
+  .star{position:absolute;color:#fff;animation:twinkle 2.8s ease-in-out infinite}
+  .star svg{width:100%;height:100%;display:block;fill:currentColor}
+  .s1{width:16px;height:16px;left:26px;top:96px;opacity:.95;animation-delay:.2s}
+  .s2{width:11px;height:11px;right:74px;top:86px;opacity:.85;animation-delay:.9s}
+  .s3{width:10px;height:10px;right:30px;top:58px;color:#ffe08a;opacity:.95;animation-delay:1.4s}
+  @keyframes twinkle{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(.6);opacity:.4}}
 
-  /* 校徽 */
-  .crest{
-    position:absolute; left:50%; top:89px; transform:translateX(-50%);
-    width:118px; height:118px; border-radius:50%;
-    background:#fff;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 10px 24px rgba(46,49,146,.28);
-    border:5px solid #fff;
-    z-index:3;
+  /* 個人頭像 + 校徽小章 */
+  .avatar-wrap{
+    position:absolute; left:50%; top:86px; transform:translateX(-50%);
+    width:124px; height:124px; z-index:3;
     animation:pop .6s cubic-bezier(.34,1.56,.64,1) both;
   }
-  .crest img{width:84px;height:84px;object-fit:contain}
+  .avatar{
+    width:124px; height:124px; border-radius:50%;
+    object-fit:cover; display:block;
+    border:5px solid #fff;
+    box-shadow:0 12px 26px rgba(46,49,146,.30);
+    background:#fff;
+  }
+  .logo-badge{
+    position:absolute; right:-4px; bottom:-2px;
+    width:50px; height:50px; border-radius:50%;
+    background:#fff; border:3px solid #fff;
+    box-shadow:0 6px 14px rgba(46,49,146,.3);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .logo-badge img{width:40px;height:40px;object-fit:contain}
   @keyframes pop{0%{transform:translateX(-50%) scale(.4);opacity:0}100%{transform:translateX(-50%) scale(1);opacity:1}}
 
-  .body{padding:68px 24px 0;text-align:center}
+  .body{padding:74px 24px 0;text-align:center}
   .name{
     font-family:"Baloo 2","Noto Sans TC",sans-serif;
     font-size:36px; font-weight:800; letter-spacing:2px;
@@ -123,7 +139,8 @@
     border:2px solid #ede6ff;
     box-shadow:0 6px 14px -10px rgba(46,49,146,.5);
   }
-  .edu .badge .cap{font-size:19px;line-height:1}
+  .edu .badge .cap{line-height:0;color:var(--blue)}
+  .edu .badge .cap svg{width:20px;height:20px;display:block}
   .edu .badge .lab{text-align:left;line-height:1.15}
   .edu .badge .deg{font-size:15px;font-weight:800;color:var(--blue)}
   .edu .badge .deg small{font-size:12px;color:var(--muted);font-weight:600}
@@ -150,7 +167,8 @@
     color:var(--ink); font-weight:700; font-size:14px;
     box-shadow:0 6px 14px -10px rgba(46,49,146,.5);
   }
-  .mail .e{font-size:18px}
+  .mail .e{line-height:0;color:var(--red)}
+  .mail .e svg{width:18px;height:18px;display:block}
 
   /* 截圖按鈕（在卡片外） */
   .cap-btn{
@@ -166,8 +184,11 @@
   }
   .cap-btn:hover{transform:translateY(-2px) scale(1.02)}
   .cap-btn:active{transform:translateY(0) scale(.98)}
-  .cap-btn .ic{font-size:20px}
+  .cap-btn .ic{line-height:0}
+  .cap-btn .ic svg{width:20px;height:20px;display:block}
   .cap-btn.busy{opacity:.7;pointer-events:none}
+  .spin{width:18px;height:18px;border:3px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;display:inline-block;animation:spin .7s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
   .hint{font-size:12px;color:var(--muted);margin-top:-6px}
 
   @media (max-width:380px){
@@ -183,11 +204,14 @@
         <div class="sun"></div>
         <div class="cloud c1"></div>
         <div class="cloud c2"></div>
-        <span class="doodle d1">📚</span>
-        <span class="doodle d2">✏️</span>
-        <span class="doodle d3">⭐</span>
+        <span class="star s1"><svg viewBox="0 0 24 24"><path d="M12 2l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.77l-5.88 3.09 1.12-6.55L2.48 9.92l6.58-.96z"/></svg></span>
+        <span class="star s2"><svg viewBox="0 0 24 24"><path d="M12 2l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.77l-5.88 3.09 1.12-6.55L2.48 9.92l6.58-.96z"/></svg></span>
+        <span class="star s3"><svg viewBox="0 0 24 24"><path d="M12 2l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.77l-5.88 3.09 1.12-6.55L2.48 9.92l6.58-.96z"/></svg></span>
       </div>
-      <div class="crest"><img src="logo.png" alt="中華基督教會基慈小學校徽" /></div>
+      <div class="avatar-wrap">
+        <img class="avatar" src="portrait.png" alt="馮志遠主任" />
+        <span class="logo-badge"><img src="logo.png" alt="中華基督教會基慈小學校徽" /></span>
+      </div>
 
       <div class="body">
         <h1 class="name">馮志遠</h1>
@@ -195,13 +219,13 @@
 
         <div class="edu">
           <div class="badge">
-            <span class="cap">🎓</span>
+            <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/><path d="M22 10v6"/></svg></span>
             <span class="lab">
               <span class="deg">M.Ed <small>教育碩士</small></span>
             </span>
           </div>
           <div class="badge">
-            <span class="cap">🎓</span>
+            <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/><path d="M22 10v6"/></svg></span>
             <span class="lab">
               <span class="deg">B.Ed <small>教育學士</small></span>
             </span>
@@ -214,13 +238,13 @@
         <div class="school-en">CCC Kei Tsz Primary School</div>
 
         <a class="mail" href="mailto:fcy@keitsz.edu.hk">
-          <span class="e">✉️</span> fcy@keitsz.edu.hk
+          <span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span> fcy@keitsz.edu.hk
         </a>
       </div>
     </section>
 
     <button class="cap-btn" id="capBtn" type="button">
-      <span class="ic">📸</span> 截圖儲存名片
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.5"/></svg></span> 截圖儲存名片
     </button>
     <div class="hint">一鍵儲存為圖片，方便分享</div>
   </main>
@@ -233,7 +257,7 @@
       if (!window.html2canvas) return;
       capBtn.classList.add("busy");
       const original = capBtn.innerHTML;
-      capBtn.innerHTML = '<span class="ic">⏳</span> 生成中…';
+      capBtn.innerHTML = '<span class="spin"></span> 生成中…';
       try {
         const canvas = await html2canvas(card, {
           scale: Math.max(2, window.devicePixelRatio || 1),
